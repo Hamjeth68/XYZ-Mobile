@@ -10,7 +10,7 @@ interface AvatarProps {
 }
 
 const Avatar: React.FC<AvatarProps> = ({ imageUrl, width, height, borderRadius }) => {
-  return <Image source={{ uri: imageUrl }} style={{ width: width, height: height, borderRadius: borderRadius }} />;
+  return <Image source={{ uri: imageUrl}} style={{ width: width, height: height, borderRadius: borderRadius }} />;
 };
 
 export default Avatar;

@@ -7,10 +7,7 @@ import Routes from '@/components/Navigation/Routes';
 
 export default function App() {
   return (
-    
-      <Routes />
-    
-    
+      <Routes /> 
   );
 }
 

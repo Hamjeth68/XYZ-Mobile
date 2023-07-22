@@ -12,7 +12,7 @@ import LoadingModal from '@/components/LoadingModal';
 
 const  LoginScreen = ({ navigation }: AuthStackScreenProps<"LoginScreen">)  =>{
     const [loading, setLoading] = useState(false);
-    
+
     const onPressSubmit = () => {
         setLoading(true);
         setTimeout(() => {
@@ -33,7 +33,7 @@ const  LoginScreen = ({ navigation }: AuthStackScreenProps<"LoginScreen">)  =>{
             <View style={styles.root}>
                 <ScrollView contentContainerStyle={styles.scrollView}>
                     <View style={styles.loginContainer}>
-                        <Avatar imageUrl="https://picsum.photos/200" height={200} width={200} borderRadius={30} />
+                        <Avatar imageUrl="../../../assets/images/login.jfif" height={200} width={200} borderRadius={30} />
                         <Text style={styles.title}>Welcome</Text>
 
                         <CustomInput icon="email" placeholder="Username" />
