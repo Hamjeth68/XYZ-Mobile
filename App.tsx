@@ -1,19 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Button from './src/components/Button';
 import React from 'react';
-import CustomInput from '@/components/Inputs';
-import Avatar from '@/components/Avatar';
-import LoginScreen from '@/screens/Auth/LoginScreen';
-
-
+import Routes from '@/components/Navigation/Routes';
+import GPSLocation from '@/components/GPSLocation';
+import { Provider as PaperProvider } from "react-native-paper";
+import BottomTabNavigation from '@/components/Navigation/Tabs/BottomTabNavigation';
+import BottomTabComponent from '@/components/Navigation/Tabs/BottomTabNavigation';
 
 export default function App() {
   return (
-    
-      <LoginScreen />
-    
-    
+    <PaperProvider>
+      <StatusBar style="light" />
+      <Routes />
+    </PaperProvider>
+
   );
 }
 

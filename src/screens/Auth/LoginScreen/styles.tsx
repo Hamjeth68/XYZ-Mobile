@@ -40,7 +40,7 @@ export const styles = StyleSheet.create({
   },
   loginContainer: {
     alignItems: "center",
-    marginTop: hp(40),
+    marginTop: hp(19),
     marginBottom: hp(4),
   },
 
