@@ -6,4 +6,5 @@ export default {
     themeText4: "#CDCDCD",
     background1: "#f7f7f7dc",
     yellow: "#F2CD33",
+    black: "#050505"
   };

@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, Text, View, Image, SafeAreaViewComponent } from 'react-native';
 import React, { useState } from 'react';
 import CustomInput from '@/components/Inputs';
 import Avatar from '@/components/Avatar';
@@ -20,6 +20,7 @@ const  LoginScreen = ({ navigation }: AuthStackScreenProps<"LoginScreen">)  =>{
           navigation.navigate("HomeScreen");
         }, 2000);
       };
+      
     return (
         <ScrollView keyboardShouldPersistTaps="always"
             keyboardDismissMode="on-drag"
@@ -33,7 +34,7 @@ const  LoginScreen = ({ navigation }: AuthStackScreenProps<"LoginScreen">)  =>{
             <View style={styles.root}>
                 <ScrollView contentContainerStyle={styles.scrollView}>
                     <View style={styles.loginContainer}>
-                        <Avatar imageUrl="../../../assets/images/login.jfif" height={200} width={200} borderRadius={30} />
+                        <Image style={{height: 200, width: 200}} source={require('../../../assets/images/log.png')}/>
                         <Text style={styles.title}>Welcome</Text>
 
                         <CustomInput icon="email" placeholder="Username" />
