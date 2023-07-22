@@ -17,10 +17,10 @@ const  LoginScreen = ({ navigation }: AuthStackScreenProps<"LoginScreen">)  =>{
         setLoading(true);
         setTimeout(() => {
           setLoading(false);
-          navigation.navigate("HomeScreen");
+          navigation.navigate("BottomTabComponent");
         }, 2000);
       };
-      
+
     return (
         <ScrollView keyboardShouldPersistTaps="always"
             keyboardDismissMode="on-drag"

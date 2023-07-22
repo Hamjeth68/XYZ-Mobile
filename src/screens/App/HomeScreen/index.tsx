@@ -102,7 +102,7 @@ export default function HomeScreen() {
       
       <StatusBar backgroundColor={Colors.theme} barStyle="dark-content" />
       
-      <View style={styles.locationView}>
+      {/* <View style={styles.locationView}>
       {errorMsg ? (
         <Text style={styles.locationText}>{errorMsg}</Text>
       ) : location ? (
@@ -113,7 +113,7 @@ export default function HomeScreen() {
       ) : (
         <Text>Loading...</Text>
       )}
-      </View>
+      </View> */}
       <View style={styles.header}>
         {/* <Text style={styles.headerLink}> text</Text> */}
         <TouchableOpacity onPress={() => { console.log('tin') }}>
