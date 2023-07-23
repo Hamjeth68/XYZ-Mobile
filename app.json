@@ -34,15 +34,6 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "defaultConfig": {
-        "manifestPlaceholders": {
-          "appAuthRedirectScheme": "com.orelitapp",
-          "auth0Domain": "dev-2q3q3q3q.us.auth0.com",
-          "auth0Scheme": "${applicationId}"
-
-        },
-        "applicationId": "com.orelitapp"
       }
     },
     "web": {
