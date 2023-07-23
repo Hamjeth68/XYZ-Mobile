@@ -36,7 +36,6 @@ const  LoginScreen = ({ navigation }: AuthStackScreenProps<"LoginScreen">)  =>{
         };
       }, [email, password]);
 
-      console.log("data", data);
       console.log("requestBody", requestBody);
       const makeLoginRequest = useCallback(() => {
         dispatch<any>(requestUserLogin(requestBody));

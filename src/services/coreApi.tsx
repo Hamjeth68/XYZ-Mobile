@@ -1,8 +1,8 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
-import { AUTH_BASE_URL } from '@/src/constatnts';
+import { AUTH_BASE_URL, BASE_URL } from '@/src/constatnts';
 
 const coreApiInstance = axios.create({
-  baseURL: AUTH_BASE_URL,
+  baseURL: BASE_URL,
   timeout: 3000,
   headers: { 'Content-Type': 'application/json' },
 });

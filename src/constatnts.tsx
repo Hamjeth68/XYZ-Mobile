@@ -1,7 +1,7 @@
 import Constants from 'expo-constants';
 
 
-export const BASE_URL = 'https://8c155025-93d6-4ead-a36d-9afdf9c1f291.mock.pstmn.io';
+export const BASE_URL = 'https://8c155025-93d6-4ead-a36d-9afdf9c1f291.mock.pstmn.io/';
 export const AUTH_BASE_URL = 'https://api.escuelajs.co/api/v1/';
 export const CLIENT_ID = Constants?.manifest?.extra?.CLIENT_ID;
 export const CLIENT_SECRET = Constants?.manifest?.extra?.CLIENT_SECRET;

@@ -98,7 +98,7 @@ const BottomTabComponent = () => {
                 size={Platform.OS == "ios" ? 25 : 35}
                 color={color}
               />
-              <Text style={[styles.tabIconText, { color: color }]}>Scenes</Text>
+              <Text style={[styles.tabIconText, { color: color }]}>Cart</Text>
             </View>
           ),
         })}
@@ -115,7 +115,7 @@ const BottomTabComponent = () => {
                 color={color}
               />
               <Text style={[styles.tabIconText, { color: color }]}>
-                Curation
+                Profile
               </Text>
             </View>
           ),

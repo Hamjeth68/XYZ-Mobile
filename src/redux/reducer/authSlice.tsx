@@ -34,7 +34,6 @@ export const requestUserLogin = createAsyncThunk(
     async (body: IAuthRequestBody, { rejectWithValue }) => {
       try {
         const response = await requestLogin(body);
-        console.log("responserequestUserLogin-------", response);
         return response;
       } catch (err: any) {
         const error: AxiosError<IAuthError> = err; // cast the error for access
