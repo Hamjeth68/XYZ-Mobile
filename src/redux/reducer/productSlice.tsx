@@ -98,6 +98,5 @@ export const getUserInfo = createAsyncThunk(
   export const { resetStatus, resetProfile, setProduct } = productSlice.actions;
 
  export const selectProduct = (state: RootState) => state.product.productData;
- export const selectImageUrl = (state: RootState) => state.product.productData?.data?.products?.images[0].url;
 
  export default productSlice.reducer;
