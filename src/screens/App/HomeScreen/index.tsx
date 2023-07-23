@@ -19,13 +19,18 @@ import { getUserInfo, selectProduct } from '@/src/redux/reducer/productSlice';
 
 
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}: any) {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState('');
-
+  
+ 
   const dispatch = useAppDispatch();
   const productData = useAppSelector(selectProduct);
 
+  
+
+ 
+  console.log('productData', productData?.products[0].images[0].url)
   const page = 2;
   useEffect(() => {
     dispatch<any>(getUserInfo(page));
@@ -80,33 +85,33 @@ export default function HomeScreen() {
   const productsInfo = [
     {
       id: 1,
-      name: 'Product 1',
-      description: 'Description for Product 1',
-      imageUrl: 'https://via.placeholder.com/150',
+      name: productData?.products[0].name,
+      description: productData?.products[0].shortDescription,
+      imageUrl: productData?.products[0].images[0].url,
+    },
+    {
+      id: 1,
+      name: productData?.products[1].name,
+      description: productData?.products[1].shortDescription,
+      imageUrl:  productData?.products[1].images[0].url,
     },
     {
       id: 2,
-      name: 'Product 2',
-      description: 'Description for Product 2',
-      imageUrl: 'https://via.placeholder.com/150',
+      name: productData?.products[2].name,
+      description:  productData?.products[2].shortDescription,
+      imageUrl: productData?.products[2].images[0].url,
     },
     {
-      id: 2,
-      name: 'Product 2',
-      description: 'Description for Product 2',
-      imageUrl: 'https://via.placeholder.com/150',
+      id: 3,
+      name:   productData?.products[3].name,
+      description: productData?.products[3].shortDescription,
+      imageUrl: productData?.products[3].images[0].url,
     },
     {
-      id: 2,
-      name: 'Product 2',
-      description: 'Description for Product 2',
-      imageUrl: 'https://via.placeholder.com/150',
-    },
-    {
-      id: 2,
-      name: 'Product 2',
-      description: 'Description for Product 2',
-      imageUrl: 'https://via.placeholder.com/150',
+      id: 4,
+      name: productData?.products[4].name,
+      description: productData?.products[4].shortDescription,
+      imageUrl: productData?.products[4].images[0].url,
     },
     // Add more product items as needed
   ];
@@ -145,11 +150,12 @@ export default function HomeScreen() {
       <Text style={styles.refText}>Recommended For You</Text>    
       <FlatList
           data={productsInfo}
-          renderItem={({ item }) => (
+          renderItem={({ item, index }) => (
             <ProductCard
-              product={item}
+            key={index}
+             products={item}
               onPress={() => {
-                // Handle product item press here
+               
               }}
             />
           )}

@@ -18,7 +18,10 @@ export interface IProduct {
 export interface IProductsResponseBody {
     code?: string | undefined;
     message?: string | undefined;
-    data?: IProduct[] | undefined;
+    data?: {
+        products?: IProduct[] | undefined;
+        total?: number | undefined;
+    }
 }
 
 export interface IProductsError {

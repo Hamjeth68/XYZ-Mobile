@@ -5,24 +5,20 @@ interface Product {
   id?: number | undefined;
   name?: string | undefined;
   description?: string | undefined;
-  imageUrl?: string | undefined;
-  price?: number | undefined;
-  discount?: number;
-  images?: string[];
-  code: string | undefined;
+  url?: string | undefined;
 }
 
 interface ProductCardProps {
-  product: Product;
+  products: Product;
   onPress: () => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, onPress }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ products, onPress }) => {
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Image source={{ uri: product.imageUrl }} style={styles.image} />
-      <Text style={styles.name}>{product.name}</Text>
-      <Text style={styles.description}>{product.description}</Text>
+      <Image source={{ uri: products.url }} style={styles.image} />
+      <Text style={styles.name}>{products.name}</Text>
+      <Text style={styles.description}>{products.description}</Text>
     </TouchableOpacity>
   );
 };

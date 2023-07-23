@@ -8,7 +8,7 @@ import {
 import { RFValue } from "react-native-responsive-fontsize";
 import Colors from "@/src/utils/Colors";
 
-interface ButtonProps {
+export interface ButtonProps {
   label: string;
   onPress: () => void;
 }
