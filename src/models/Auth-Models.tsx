@@ -3,22 +3,18 @@ export interface IAuthRequestBody {
     password?: string;
 }
 
-export interface IAuthResponse {
+export interface IAuthResponseBody {
     accessToken?: string;
     refreshToken?: string;
 }
 
-export interface IAuthState {
-    accessToken?: string | null;
-    refreshToken?: string | null;
-
+export interface IAuthData {
+    accessToken?: string;
+    refreshToken?: string;
 }
 
 export interface IAuthError {
     error?: string;
+    error_description?: string;
 
-}
-
-export interface IAuthResponseError {
-    error?: string;
 }
