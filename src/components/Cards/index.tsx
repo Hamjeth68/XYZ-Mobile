@@ -2,10 +2,14 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 interface Product {
-  id: number;
-  name: string;
-  description: string;
-  imageUrl: string;
+  id?: number | undefined;
+  name?: string | undefined;
+  description?: string | undefined;
+  imageUrl?: string | undefined;
+  price?: number | undefined;
+  discount?: number;
+  images?: string[];
+  code: string | undefined;
 }
 
 interface ProductCardProps {
