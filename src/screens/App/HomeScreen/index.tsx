@@ -13,6 +13,8 @@ import BannerImage from '@/components/BannerImage';
 import SearchBar from '@/components/SearchBar';
 import * as Location from 'expo-location';
 import * as TaskManager from 'expo-task-manager';
+import { useAppDispatch, useAppSelector } from '@/src/redux/stateHooks';
+import { getUserInfo, selectProduct } from '@/src/redux/reducer/productSlice';
 
 
 
@@ -20,7 +22,14 @@ import * as TaskManager from 'expo-task-manager';
 export default function HomeScreen() {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState('');
-  
+
+  const dispatch = useAppDispatch();
+  const productData = useAppSelector(selectProduct);
+
+  const page = 2;
+  useEffect(() => {
+    dispatch<any>(getUserInfo(page));
+  }, [dispatch, page])
   const getLocationPermission = async () => {
     try {
       if (Platform.OS === 'android') {
@@ -47,6 +56,10 @@ export default function HomeScreen() {
     }
   };
 
+
+  
+
+
   const getLocation = () => {
     Geolocation.getCurrentPosition(
       (position: { coords: React.SetStateAction<null>; }) => {
@@ -63,7 +76,8 @@ export default function HomeScreen() {
     getLocationPermission();
   }, []);
   
-  const products = [
+
+  const productsInfo = [
     {
       id: 1,
       name: 'Product 1',
@@ -128,9 +142,9 @@ export default function HomeScreen() {
       </View>
       <Image source={require('../../../assets/images/offer2.jpg')} style={{ width: wp(100), height: hp(25), backfaceVisibility: 'hidden' }} />
       <View style={styles.container}>
-      <Text style={styles.refText}>Recommended For You</Text>       
-        <FlatList
-          data={products}
+      <Text style={styles.refText}>Recommended For You</Text>    
+      <FlatList
+          data={productsInfo}
           renderItem={({ item }) => (
             <ProductCard
               product={item}
@@ -142,6 +156,7 @@ export default function HomeScreen() {
           keyExtractor={(item) => item.id.toString()}
           numColumns={2}
         />
+     
       </View>
       
     </View>
